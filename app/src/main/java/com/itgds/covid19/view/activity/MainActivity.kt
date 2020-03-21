@@ -1,15 +1,14 @@
 package com.itgds.covid19.view.activity
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.widget.SearchView
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import com.itgds.covid19.R
-import com.itgds.covid19.viewmodel.countrydetailsviewmodel.CountryDetailsViewModel
 import com.itgds.covid19.viewmodel.mainviewmodel.MainViewModel
 import dagger.android.support.DaggerAppCompatActivity
 import javax.inject.Inject
@@ -30,6 +29,8 @@ class MainActivity : DaggerAppCompatActivity() {
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
 
+    var countries: List<CountriesStat> = listOf()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -38,6 +39,31 @@ class MainActivity : DaggerAppCompatActivity() {
         configViewModel()
         getAllCountry()
         getTotal()
+        listenOnSearch()
+    }
+
+    private fun listenOnSearch() {
+        lt_search.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
+            override fun onQueryTextSubmit(p0: String): Boolean {
+                filterCountries(p0)
+                return true
+            }
+
+            override fun onQueryTextChange(p0: String): Boolean {
+                filterCountries(p0)
+                return true
+            }
+
+        })
+    }
+
+    private fun filterCountries(p0: String) {
+        (rv_countries.adapter as CountryRecyclerViewAdapter).updateCountries(countries.filter {
+            it.countryName.contains(
+                p0,
+                ignoreCase = true
+            )
+        })
     }
 
     private fun initView() {
@@ -58,7 +84,7 @@ class MainActivity : DaggerAppCompatActivity() {
 
                     ViewState.Status.SUCCESS -> {
                         setVisibility(isLoading = false)
-                        Log.e("data", movieViewState.data.toString())
+                        countries = movieViewState.data?.countriesStat ?: listOf()
                         rv_countries.adapter = CountryRecyclerViewAdapter(
                             countries = movieViewState.data?.countriesStat ?: listOf()
                         ) {
@@ -72,8 +98,6 @@ class MainActivity : DaggerAppCompatActivity() {
                                 )
                             )
                         }
-
-//                        homeMovieAdapter.submitList(movieViewState.data)
                     }
 
                     ViewState.Status.ERROR -> {
@@ -111,13 +135,13 @@ class MainActivity : DaggerAppCompatActivity() {
         if (isLoading) {
             pb_home.visibility = View.VISIBLE
             lt_home.visibility = View.GONE
-        } else if(errorMessage == null) {
+        } else if (errorMessage == null) {
             pb_home.visibility = View.GONE
             lt_home.visibility = View.VISIBLE
-        }else{
+        } else {
             pb_home.visibility = View.GONE
             lt_home.visibility = View.GONE
-            Toast.makeText(this,"An error Occurred!",Toast.LENGTH_LONG).show()
+            Toast.makeText(this, "An error Occurred!", Toast.LENGTH_LONG).show()
         }
     }
 }

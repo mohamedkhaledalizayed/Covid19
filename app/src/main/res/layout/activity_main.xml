@@ -21,7 +21,8 @@
         android:id="@+id/lt_home"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:visibility="gone">
+        android:visibility="gone"
+        tools:visibility="visible">
     <TextView
         android:id="@+id/tv_home_title"
         android:layout_width="wrap_content"
@@ -34,27 +35,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_total"
-        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="@string/total"
-        android:textSize="@dimen/_14ssp"
-        app:layout_constraintEnd_toStartOf="@id/btn_today"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_home_title" />
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_today"
-        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="@string/today"
-        android:textSize="@dimen/_14ssp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/btn_total"
-        app:layout_constraintTop_toTopOf="@id/btn_total" />
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/lt_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorWhite"
+            android:queryHint="@string/country_name"
+            android:layout_marginTop="@dimen/_18sdp"
+            android:padding="@dimen/_4sdp"
+            app:layout_constraintTop_toBottomOf="@id/tv_home_title"/>
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/cv_total_confirmed"
@@ -67,7 +56,7 @@
         app:cardCornerRadius="@dimen/_4sdp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@id/cv_total_deceased"
-        app:layout_constraintTop_toBottomOf="@id/btn_total">
+        app:layout_constraintTop_toBottomOf="@id/lt_search">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -108,7 +97,7 @@
         android:layout_marginTop="@dimen/_12sdp"
         app:strokeColor="#CCC"
         app:cardCornerRadius="@dimen/_4sdp"
-        app:layout_constraintTop_toBottomOf="@id/btn_total"
+        app:layout_constraintTop_toBottomOf="@id/lt_search"
         app:layout_constraintStart_toEndOf="@id/cv_total_confirmed"
         app:layout_constraintEnd_toEndOf="parent">
 

@@ -8,7 +8,7 @@ import com.itgds.covid19.R
 import com.itgds.covid19.services.response.CountriesStat
 import kotlinx.android.synthetic.main.country_list_item.view.*
 
-class CountryRecyclerViewAdapter(private val countries: List<CountriesStat> = listOf(),
+class CountryRecyclerViewAdapter(private var countries: List<CountriesStat> = listOf(),
                                  private val onItemClick: ((item: CountriesStat) -> Unit)? = null)
     : RecyclerView.Adapter<CountryRecyclerViewAdapter.ViewHolder>() {
     class ViewHolder(itemView: View, private val onItemClick: ((item: CountriesStat) -> Unit)? = null): RecyclerView.ViewHolder(itemView) {
@@ -23,6 +23,10 @@ class CountryRecyclerViewAdapter(private val countries: List<CountriesStat> = li
 
     }
 
+    fun updateCountries(list: List<CountriesStat>){
+        countries = list
+        notifyDataSetChanged()
+    }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
         val binding = layoutInflater.inflate(R.layout.country_list_item, parent, false)
