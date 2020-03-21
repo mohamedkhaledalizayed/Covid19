@@ -1,19 +1,17 @@
 package com.itgds.covid19.view.activity
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import com.itgds.covid19.R
-import com.itgds.covid19.viewmodel.countrydetailsviewmodel.CountryDetailsViewModel
-import com.itgds.covid19.viewmodel.mainviewmodel.MainViewModel
-import dagger.android.support.DaggerAppCompatActivity
-import javax.inject.Inject
-import androidx.lifecycle.Observer
 import com.itgds.covid19.services.response.AllCountryResponse
 import com.itgds.covid19.services.response.totalnumber.TotalNumbersResponse
 import com.itgds.covid19.utils.ViewState
+import com.itgds.covid19.viewmodel.mainviewmodel.MainViewModel
+import dagger.android.support.DaggerAppCompatActivity
+import javax.inject.Inject
 
 class MainActivity : DaggerAppCompatActivity() {
 
