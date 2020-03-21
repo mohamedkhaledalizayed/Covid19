@@ -1,8 +1,11 @@
 package com.itgds.covid19.services.response
 
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.android.parcel.Parcelize
 
+@Parcelize
 data class CountriesStat(
     @SerializedName("active_cases")
     val activeCases: String,
@@ -24,4 +27,4 @@ data class CountriesStat(
     val totalCasesPer1mPopulation: String,
     @SerializedName("total_recovered")
     val totalRecovered: String
-)
+) : Parcelable

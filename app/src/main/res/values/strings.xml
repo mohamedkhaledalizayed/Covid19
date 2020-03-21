@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">Covid 19</string>
+    <string name="home_title">COVID19</string>
+    <string name="total">Total</string>
+    <string name="today">Today</string>
+    <string name="total_confirmed">Total Confirmed</string>
+    <string name="total_confirmed_number">286402</string>
+    <string name="total_deceased">Total Deceased</string>
+    <string name="country_name">United Kingdom</string>
+    <string name="total_recovered">Total Recovered</string>
+    <string name="total_serious">Total Serious</string>
+    <string name="new_cases">New Cases</string>
+    <string name="active_cases">Active Cases</string>
+    <string name="new_deaths">New Deaths</string>
+    <string name="percentage">% per 1M</string>
 </resources>
