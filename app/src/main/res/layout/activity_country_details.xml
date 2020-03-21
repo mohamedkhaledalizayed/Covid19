@@ -4,6 +4,367 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorGreyLight"
+    android:padding="@dimen/_12sdp"
     tools:context=".view.activity.CountryDetailsActivity">
+
+    <TextView
+        android:id="@+id/tv_country_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/country_name"
+        android:textSize="@dimen/_20ssp"
+        android:textStyle="bold"
+        android:textColor="@color/colorBlack"
+        />
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cv_total_confirmed"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_22sdp"
+        android:layout_margin="@dimen/_4sdp"
+        app:strokeWidth="@dimen/_2sdp"
+        app:strokeColor="@color/colorPrimaryDark"
+        app:cardCornerRadius="@dimen/_4sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/cv_total_deceased"
+        app:layout_constraintTop_toBottomOf="@id/tv_country_title">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorBlack"
+            android:padding="@dimen/_2sdp">
+
+            <TextView
+                android:id="@+id/tv_total_confirmed_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/total_confirmed"
+                android:textAlignment="center"
+                android:textSize="@dimen/_15ssp"
+                android:textColor="@color/colorBlue"
+                android:layout_margin="@dimen/_4sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_total_confirmed_value"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/total_confirmed_number"
+                android:textAlignment="center"
+                android:textSize="@dimen/_15ssp"
+                android:textColor="@color/colorBlue"
+                android:layout_margin="@dimen/_4sdp"
+                app:layout_constraintTop_toBottomOf="@id/tv_total_confirmed_title" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cv_total_deceased"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:strokeWidth="@dimen/_2sdp"
+        android:layout_margin="@dimen/_4sdp"
+        android:layout_marginTop="@dimen/_22sdp"
+        app:strokeColor="@color/colorPrimaryDark"
+        app:cardCornerRadius="@dimen/_4sdp"
+        app:layout_constraintTop_toBottomOf="@id/tv_country_title"
+        app:layout_constraintStart_toEndOf="@id/cv_total_confirmed"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorBlack"
+            android:padding="@dimen/_2sdp">
+
+            <TextView
+                android:id="@+id/tv_total_deceased_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/total_deceased"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:textAlignment="center"
+                android:textSize="@dimen/_15ssp"
+                android:textColor="@color/colorRed"
+                android:layout_margin="@dimen/_4sdp"
+                />
+
+            <TextView
+                android:id="@+id/tv_total_deceased_value"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/total_confirmed_number"
+                android:textAlignment="center"
+                android:textSize="@dimen/_15ssp"
+                android:textColor="@color/colorRed"
+                android:layout_margin="@dimen/_4sdp"
+                app:layout_constraintTop_toBottomOf="@id/tv_total_deceased_title" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cv_total_recovered"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:strokeWidth="@dimen/_2sdp"
+        android:layout_marginTop="@dimen/_18sdp"
+        app:strokeColor="@color/colorPrimaryDark"
+        app:cardCornerRadius="@dimen/_4sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/cv_total_confirmed"
+        app:layout_constraintTop_toBottomOf="@id/cv_total_confirmed">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorBlack"
+            android:padding="@dimen/_2sdp">
+
+            <TextView
+                android:id="@+id/tv_total_recovered_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/total_recovered"
+                android:textAlignment="center"
+                android:textSize="@dimen/_15ssp"
+                android:textColor="@color/colorGreen"
+                android:layout_margin="@dimen/_4sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_total_recovered_value"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/total_confirmed_number"
+                android:textAlignment="center"
+                android:textSize="@dimen/_15ssp"
+                android:textColor="@color/colorGreen"
+                android:layout_margin="@dimen/_4sdp"
+                app:layout_constraintTop_toBottomOf="@id/tv_total_recovered_title" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cv_total_serious"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:strokeWidth="@dimen/_2sdp"
+        android:layout_marginTop="@dimen/_18sdp"
+        app:strokeColor="@color/colorPrimaryDark"
+        app:cardCornerRadius="@dimen/_4sdp"
+        app:layout_constraintTop_toBottomOf="@id/cv_total_confirmed"
+        app:layout_constraintStart_toStartOf="@id/cv_total_deceased"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorBlack"
+            android:padding="@dimen/_2sdp">
+
+            <TextView
+                android:id="@+id/tv_total_serious_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/total_serious"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:textAlignment="center"
+                android:textSize="@dimen/_15ssp"
+                android:textColor="@color/colorYellow"
+                android:layout_margin="@dimen/_4sdp"
+                />
+
+            <TextView
+                android:id="@+id/tv_total_serious_value"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/total_confirmed_number"
+                android:textAlignment="center"
+                android:textSize="@dimen/_15ssp"
+                android:textColor="@color/colorYellow"
+                android:layout_margin="@dimen/_4sdp"
+                app:layout_constraintTop_toBottomOf="@id/tv_total_serious_title" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cv_new_cases"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:strokeWidth="@dimen/_2sdp"
+        android:layout_marginTop="@dimen/_18sdp"
+        app:strokeColor="@color/colorPrimaryDark"
+        app:cardCornerRadius="@dimen/_4sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/cv_total_confirmed"
+        app:layout_constraintTop_toBottomOf="@id/cv_total_recovered">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorBlack"
+            android:padding="@dimen/_2sdp">
+
+            <TextView
+                android:id="@+id/tv_new_cases_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/new_cases"
+                android:textAlignment="center"
+                android:textSize="@dimen/_15ssp"
+                android:textColor="@color/colorGreen"
+                android:layout_margin="@dimen/_4sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_new_cases_value"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/total_confirmed_number"
+                android:textAlignment="center"
+                android:textSize="@dimen/_15ssp"
+                android:textColor="@color/colorGreen"
+                android:layout_margin="@dimen/_4sdp"
+                app:layout_constraintTop_toBottomOf="@id/tv_new_cases_title" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cv_active_cases"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:strokeWidth="@dimen/_2sdp"
+        android:layout_marginTop="@dimen/_18sdp"
+        app:strokeColor="@color/colorPrimaryDark"
+        app:cardCornerRadius="@dimen/_4sdp"
+        app:layout_constraintTop_toBottomOf="@id/cv_total_serious"
+        app:layout_constraintStart_toStartOf="@id/cv_total_deceased"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorBlack"
+            android:padding="@dimen/_2sdp">
+
+            <TextView
+                android:id="@+id/tv_active_cases_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/active_cases"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:textAlignment="center"
+                android:textSize="@dimen/_15ssp"
+                android:textColor="@color/colorYellow"
+                android:layout_margin="@dimen/_4sdp"
+                />
+
+            <TextView
+                android:id="@+id/tv_active_cases_value"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/total_confirmed_number"
+                android:textAlignment="center"
+                android:textSize="@dimen/_15ssp"
+                android:textColor="@color/colorYellow"
+                android:layout_margin="@dimen/_4sdp"
+                app:layout_constraintTop_toBottomOf="@id/tv_active_cases_title" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cv_new_deaths"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:strokeWidth="@dimen/_2sdp"
+        android:layout_marginTop="@dimen/_18sdp"
+        app:strokeColor="@color/colorPrimaryDark"
+        app:cardCornerRadius="@dimen/_4sdp"
+        app:layout_constraintTop_toBottomOf="@id/cv_new_cases"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/cv_total_confirmed">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorBlack"
+            android:padding="@dimen/_2sdp">
+
+            <TextView
+                android:id="@+id/tv_new_deaths_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/new_deaths"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:textAlignment="center"
+                android:textSize="@dimen/_15ssp"
+                android:textColor="@color/colorYellow"
+                android:layout_margin="@dimen/_4sdp"
+                />
+
+            <TextView
+                android:id="@+id/tv_new_deaths_value"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/total_confirmed_number"
+                android:textAlignment="center"
+                android:textSize="@dimen/_15ssp"
+                android:textColor="@color/colorYellow"
+                android:layout_margin="@dimen/_4sdp"
+                app:layout_constraintTop_toBottomOf="@id/tv_new_deaths_title" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cv_percentage"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:strokeWidth="@dimen/_2sdp"
+        android:layout_marginTop="@dimen/_18sdp"
+        app:strokeColor="@color/colorPrimaryDark"
+        app:cardCornerRadius="@dimen/_4sdp"
+        app:layout_constraintTop_toBottomOf="@id/cv_active_cases"
+        app:layout_constraintStart_toStartOf="@id/cv_total_deceased"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorBlack"
+            android:padding="@dimen/_2sdp">
+
+            <TextView
+                android:id="@+id/tv_percentage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/percentage"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:textAlignment="center"
+                android:textSize="@dimen/_15ssp"
+                android:textColor="@color/colorYellow"
+                android:layout_margin="@dimen/_4sdp"
+                />
+
+            <TextView
+                android:id="@+id/tv_percentage_value"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/total_confirmed_number"
+                android:textAlignment="center"
+                android:textSize="@dimen/_15ssp"
+                android:textColor="@color/colorYellow"
+                android:layout_margin="@dimen/_4sdp"
+                app:layout_constraintTop_toBottomOf="@id/tv_percentage" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

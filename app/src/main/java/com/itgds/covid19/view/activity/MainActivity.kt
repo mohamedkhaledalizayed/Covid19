@@ -1,8 +1,11 @@
 package com.itgds.covid19.view.activity
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
+import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import com.itgds.covid19.R
@@ -11,9 +14,13 @@ import com.itgds.covid19.viewmodel.mainviewmodel.MainViewModel
 import dagger.android.support.DaggerAppCompatActivity
 import javax.inject.Inject
 import androidx.lifecycle.Observer
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.itgds.covid19.services.response.AllCountryResponse
+import com.itgds.covid19.services.response.CountriesStat
 import com.itgds.covid19.services.response.totalnumber.TotalNumbersResponse
 import com.itgds.covid19.utils.ViewState
+import com.itgds.covid19.view.adapter.CountryRecyclerViewAdapter
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : DaggerAppCompatActivity() {
 
@@ -27,9 +34,14 @@ class MainActivity : DaggerAppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        initView()
         configViewModel()
         getAllCountry()
         getTotal()
+    }
+
+    private fun initView() {
+        rv_countries.layoutManager = LinearLayoutManager(this)
     }
 
     private fun configViewModel() {
@@ -46,7 +58,21 @@ class MainActivity : DaggerAppCompatActivity() {
 
                     ViewState.Status.SUCCESS -> {
                         setVisibility(isLoading = false)
-                        Log.e("data",movieViewState.data.toString())
+                        Log.e("data", movieViewState.data.toString())
+                        rv_countries.adapter = CountryRecyclerViewAdapter(
+                            countries = movieViewState.data?.countriesStat ?: listOf()
+                        ) {
+                            Log.e("country clicked", it.toString())
+                            var bundle = Bundle()
+                            bundle.putParcelable("COUNTRY", it)
+                            startActivity(
+                                Intent(this, CountryDetailsActivity::class.java).putExtra(
+                                    "EXTRA",
+                                    bundle
+                                )
+                            )
+                        }
+
 //                        homeMovieAdapter.submitList(movieViewState.data)
                     }
 
@@ -67,9 +93,10 @@ class MainActivity : DaggerAppCompatActivity() {
                     }
 
                     ViewState.Status.SUCCESS -> {
+                        tv_total_confirmed_value.text = movieViewState.data?.totalCases
+                        tv_total_deceased_value.text = movieViewState.data?.totalDeaths
+                        tv_total_recovered_value.text = movieViewState.data?.totalRecovered
                         setVisibility(isLoading = false)
-                        Log.e("total",movieViewState.data.toString())
-//                        homeMovieAdapter.submitList(movieViewState.data)
                     }
 
                     ViewState.Status.ERROR -> {
@@ -81,6 +108,17 @@ class MainActivity : DaggerAppCompatActivity() {
     }
 
     fun setVisibility(isLoading: Boolean, errorMessage: String? = null) {
-
+        if (isLoading) {
+            pb_home.visibility = View.VISIBLE
+            lt_home.visibility = View.GONE
+        } else if(errorMessage == null) {
+            pb_home.visibility = View.GONE
+            lt_home.visibility = View.VISIBLE
+        }else{
+            pb_home.visibility = View.GONE
+            lt_home.visibility = View.GONE
+            Toast.makeText(this,"An error Occurred!",Toast.LENGTH_LONG).show()
+        }
     }
 }
+
