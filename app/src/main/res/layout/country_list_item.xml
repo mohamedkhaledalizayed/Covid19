@@ -3,7 +3,6 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:strokeColor="#CCC"
     android:layout_margin="@dimen/_4sdp"
     app:strokeWidth="1dp"
     app:cardCornerRadius="@dimen/_4sdp">
@@ -11,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/colorBlack"
-        android:padding="@dimen/_8sdp">
+        android:padding="@dimen/_10sdp">
         <TextView
             android:id="@+id/tv_country_name"
             android:layout_width="wrap_content"
@@ -19,7 +18,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             android:text="@string/country_name"
-            android:textColor="@color/colorWhite"
+            android:textColor="#000"
             android:padding="@dimen/_4sdp"
             android:textSize="@dimen/_13ssp"
             />

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="@dimen/_12sdp"
-    android:background="@color/colorBlack"
+    android:background="#FDFDFE"
     tools:context=".view.activity.MainActivity">
 
     <ProgressBar
@@ -30,7 +30,7 @@
         android:text="@string/home_title"
         android:textSize="@dimen/_20ssp"
         android:textStyle="bold"
-        android:textColor="@color/colorWhite"
+        android:textColor="#000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -39,10 +39,9 @@
             android:id="@+id/lt_search"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/colorWhite"
+            android:background="@drawable/edittext_rounded_oval"
             android:queryHint="@string/country_name"
             android:layout_marginTop="@dimen/_18sdp"
-            android:padding="@dimen/_4sdp"
             app:layout_constraintTop_toBottomOf="@id/tv_home_title"/>
 
     <com.google.android.material.card.MaterialCardView
@@ -52,7 +51,6 @@
         android:layout_marginTop="@dimen/_12sdp"
         android:layout_margin="@dimen/_4sdp"
         app:strokeWidth="1dp"
-        app:strokeColor="#CCC"
         app:cardCornerRadius="@dimen/_4sdp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@id/cv_total_deceased"
@@ -68,11 +66,13 @@
                 android:id="@+id/tv_total_confirmed_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_4sdp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="12dp"
                 android:text="@string/total_confirmed"
                 android:textAlignment="center"
-                android:textSize="@dimen/_15ssp"
                 android:textColor="#2196F3"
-                android:layout_margin="@dimen/_4sdp"
+                android:textSize="@dimen/_15ssp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -95,7 +95,6 @@
         app:strokeWidth="1dp"
         android:layout_margin="@dimen/_4sdp"
         android:layout_marginTop="@dimen/_12sdp"
-        app:strokeColor="#CCC"
         app:cardCornerRadius="@dimen/_4sdp"
         app:layout_constraintTop_toBottomOf="@id/lt_search"
         app:layout_constraintStart_toEndOf="@id/cv_total_confirmed"
@@ -111,24 +110,23 @@
                 android:id="@+id/tv_total_deceased_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/total_deceased"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:textAlignment="center"
-                android:textSize="@dimen/_15ssp"
-                android:textColor="@color/colorRed"
                 android:layout_margin="@dimen/_4sdp"
-                />
+                android:text="@string/total_deceased"
+                android:textAlignment="center"
+                android:textColor="@color/colorRed"
+                android:textSize="@dimen/_15ssp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/tv_total_deceased_value"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_4sdp"
                 android:text="@string/total_confirmed_number"
                 android:textAlignment="center"
-                android:textSize="@dimen/_15ssp"
                 android:textColor="@color/colorRed"
-                android:layout_margin="@dimen/_4sdp"
+                android:textSize="@dimen/_15ssp"
                 app:layout_constraintTop_toBottomOf="@id/tv_total_deceased_title" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>
@@ -139,7 +137,6 @@
         android:layout_height="wrap_content"
         app:strokeWidth="1dp"
         android:layout_margin="@dimen/_4sdp"
-        app:strokeColor="#CCC"
         app:cardCornerRadius="@dimen/_4sdp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -185,5 +182,18 @@
         android:layout_marginBottom="@dimen/_8sdp"
         android:layout_marginTop="@dimen/_12sdp"
         tools:listitem="@layout/country_list_item"/>
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/lt_search"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.494"
+            app:layout_constraintStart_toEndOf="@+id/tv_home_title"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.444"
+             />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

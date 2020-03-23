@@ -14,12 +14,14 @@ import dagger.android.support.DaggerAppCompatActivity
 import javax.inject.Inject
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.bumptech.glide.Glide
 import com.itgds.covid19.services.response.AllCountryResponse
 import com.itgds.covid19.services.response.CountriesStat
 import com.itgds.covid19.services.response.totalnumber.TotalNumbersResponse
 import com.itgds.covid19.utils.ViewState
 import com.itgds.covid19.view.adapter.CountryRecyclerViewAdapter
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_splash_screen.*
 
 class MainActivity : DaggerAppCompatActivity() {
 
@@ -34,6 +36,7 @@ class MainActivity : DaggerAppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        Glide.with(this).load(R.raw.notification).into(imageView);
 
         initView()
         configViewModel()
