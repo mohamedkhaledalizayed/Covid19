@@ -40,6 +40,8 @@
             android:id="@+id/lt_search"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
             android:background="@drawable/edittext_rounded_oval"
             android:queryHint="@string/country_name"
             android:layout_marginTop="@dimen/_18sdp"
@@ -195,6 +197,7 @@
             app:layout_constraintStart_toEndOf="@+id/tv_home_title"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.444"
+            android:visibility="gone"
              />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
