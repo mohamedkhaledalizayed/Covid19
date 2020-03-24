@@ -14,5 +14,4 @@ interface ServiceApi {
     @GET("worldstat.php")
     fun getTotal(): Flowable<TotalNumbersResponse>
 
-
 }
