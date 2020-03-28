@@ -17,7 +17,7 @@ class SplashScreenActivity : AppCompatActivity() {
         Glide.with(this).load(R.raw.virus).into(img);
 
         Handler().postDelayed({
-            startActivity(Intent(this@SplashScreenActivity, MainActivity::class.java))
+            startActivity(Intent(this@SplashScreenActivity, DashboardActivity::class.java))
             finish()
         }, 5000)
     }

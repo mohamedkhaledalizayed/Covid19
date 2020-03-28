@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Covid 19</string>
     <string name="home_title">COVID19</string>
     <string name="total">Total</string>
@@ -13,4 +13,37 @@
     <string name="active_cases">Active Cases</string>
     <string name="new_deaths">New Deaths</string>
     <string name="percentage">% per 1M</string>
+    <string name="symptoms">Symptoms</string>
+    <string name="treatment">Treatment</string>
+    <string name="prevention">Prevention</string>
+    <string name="emergency_numbers">Emergency Numbers</string>
+    <string name="statistics">Statistics</string>
+    <string name="symptoms_text">
+        People may be sick with the virus for 1 to 14 days before developing symptoms. The most common symptoms of coronavirus
+        disease (COVID-19) are fever, tiredness, and dry cough. Most people (about 80%) recover from the disease without needing special treatment.
+        More rarely, the disease can be serious and even fatal. Older people,
+        and people with other medical conditions (such as asthma, diabetes, or heart disease),
+        may be more vulnerable to becoming severely ill.
+        People may experience:
+        cough
+        fever
+        tiredness
+        difficulty breathing (severe cases)
+    </string>
+    <string name="prevention_text">
+       1. Wash Hands often
+       2.  Cough into Your ELBOW
+       3.  Dont touch Your Face
+       4.  Keep safe distance
+       5.  Stay Home if you can
+    </string>
+    <string name="treatment_text">
+        Self care
+        If you have mild symptoms, stay at home until you’ve recovered. You can relieve your symptoms if you:
+        1. rest and sleep
+        2. drink plenty of warm liquids
+        3. take a hot shower to help ease a sore throat and cough
+        4. Self-isolate if possible
+    </string>
+
 </resources>
