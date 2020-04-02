@@ -16,6 +16,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+
         />
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/lt_home"
@@ -42,8 +43,9 @@
             android:layout_height="wrap_content"
             android:clickable="true"
             android:focusable="true"
-            android:background="@drawable/edittext_rounded_oval"
-            android:queryHint="@string/country_name"
+            android:backgroundTint="@color/colorGreyLight"
+            app:defaultQueryHint="@string/type_country_name"
+            app:iconifiedByDefault="false"
             android:layout_marginTop="@dimen/_18sdp"
             app:layout_constraintTop_toBottomOf="@id/tv_home_title"/>
 
@@ -176,11 +178,64 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>
 
-    <androidx.recyclerview.widget.RecyclerView
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cv_titles"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_4sdp"
+            app:cardCornerRadius="@dimen/_4sdp"
+            app:layout_constraintTop_toBottomOf="@id/cv_total_recovered"
+            app:strokeWidth="1dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorBlack"
+                android:padding="@dimen/_10sdp">
+
+                <TextView
+                    android:id="@+id/tv_country_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/_4sdp"
+                    android:text="@string/country_name"
+                    android:textColor="#000"
+                    android:textSize="@dimen/_13ssp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_confirmed"
+                    android:layout_width="@dimen/_60sdp"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/_4sdp"
+                    android:text="@string/total_confirmed_number"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorGreen"
+                    android:textSize="@dimen/_13ssp"
+                    app:layout_constraintEnd_toStartOf="@id/tv_deceased"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_deceased"
+                    android:layout_width="@dimen/_60sdp"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/_4sdp"
+                    android:text="@string/deaths"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorRed"
+                    android:textSize="@dimen/_13ssp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_countries"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintTop_toBottomOf="@id/cv_total_recovered"
+            app:layout_constraintTop_toBottomOf="@id/cv_titles"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginBottom="@dimen/_8sdp"
         android:layout_marginTop="@dimen/_12sdp"

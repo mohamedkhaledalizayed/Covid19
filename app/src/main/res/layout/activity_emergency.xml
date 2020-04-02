@@ -17,7 +17,7 @@
             android:layout_height="wrap_content"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            android:text="@string/country_name"
+            android:text="@string/egypt"
             android:textColor="#000"
             android:padding="@dimen/_4sdp"
             android:textSize="@dimen/_13ssp"

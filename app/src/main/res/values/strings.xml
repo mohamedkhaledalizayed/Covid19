@@ -1,14 +1,14 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <string name="app_name">Covid 19</string>
     <string name="home_title">COVID19</string>
     <string name="total">Total</string>
     <string name="today">Today</string>
     <string name="total_confirmed">Total Confirmed</string>
-    <string name="total_confirmed_number">286402</string>
+    <string name="total_confirmed_number">Cases</string>
     <string name="egypt_emergency_number">105</string>
     <string name="total_deceased">Total Deceased</string>
-    <string name="country_name">Egypt</string>
-    <string name="egypt">United Kingdom</string>
+    <string name="country_name">Country</string>
+    <string name="egypt">Egypt</string>
     <string name="total_recovered">Total Recovered</string>
     <string name="total_serious">Total Serious</string>
     <string name="new_cases">New Cases</string>
@@ -50,5 +50,7 @@
         3. take a hot shower to help ease a sore throat and cough \n
         4. Self-isolate if possible \n
     </string>
+    <string name="deaths">Deaths</string>
+    <string name="type_country_name">Type Country Name</string>
 
 </resources>

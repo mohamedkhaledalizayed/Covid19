@@ -6,22 +6,21 @@ import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.widget.SearchView
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
-import com.itgds.covid19.R
-import com.itgds.covid19.viewmodel.mainviewmodel.MainViewModel
-import dagger.android.support.DaggerAppCompatActivity
-import javax.inject.Inject
-import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
+import com.itgds.covid19.R
 import com.itgds.covid19.services.response.AllCountryResponse
 import com.itgds.covid19.services.response.CountriesStat
 import com.itgds.covid19.services.response.totalnumber.TotalNumbersResponse
 import com.itgds.covid19.utils.ViewState
 import com.itgds.covid19.view.adapter.CountryRecyclerViewAdapter
+import com.itgds.covid19.viewmodel.mainviewmodel.MainViewModel
+import dagger.android.support.DaggerAppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.activity_splash_screen.*
+import javax.inject.Inject
 
 class MainActivity : DaggerAppCompatActivity() {
 
@@ -36,7 +35,7 @@ class MainActivity : DaggerAppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        Glide.with(this).load(R.raw.notification).into(imageView);
+        Glide.with(this).load(R.raw.notification).into(imageView)
 
         initView()
         configViewModel()
@@ -46,7 +45,7 @@ class MainActivity : DaggerAppCompatActivity() {
     }
 
     private fun listenOnSearch() {
-        lt_search.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
+        lt_search.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(p0: String): Boolean {
                 filterCountries(p0)
                 return true
@@ -71,6 +70,7 @@ class MainActivity : DaggerAppCompatActivity() {
 
     private fun initView() {
         rv_countries.layoutManager = LinearLayoutManager(this)
+
     }
 
     private fun configViewModel() {
