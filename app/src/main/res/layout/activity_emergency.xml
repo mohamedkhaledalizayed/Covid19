@@ -8,6 +8,7 @@
     app:cardCornerRadius="@dimen/_4sdp">
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
+        android:onClick="call"
         android:layout_height="match_parent"
         android:background="@color/colorBlack"
         android:padding="@dimen/_10sdp">
