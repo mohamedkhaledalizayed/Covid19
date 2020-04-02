@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/home_title"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:textSize="@dimen/_20ssp"
+        android:textStyle="bold"
+        android:textColor="#000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cv_symptoms"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginEnd="@dimen/_20sdp"
+        app:strokeWidth="1dp"
+        app:cardCornerRadius="@dimen/_7sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_title">
+
+        <TextView
+            android:id="@+id/tv_symptoms"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_10sdp"
+            android:layout_gravity="center"
+            android:text="@string/symptoms"
+            android:textColor="#000"
+            android:textSize="@dimen/_13ssp" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cv_treatment"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        app:strokeWidth="1dp"
+        app:cardCornerRadius="@dimen/_7sdp"
+        app:layout_constraintStart_toStartOf="@id/cv_symptoms"
+        app:layout_constraintEnd_toEndOf="@id/cv_symptoms"
+        app:layout_constraintTop_toBottomOf="@id/cv_symptoms">
+
+        <TextView
+            android:id="@+id/tv_treatment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_10sdp"
+            android:layout_gravity="center"
+            android:text="@string/treatment"
+            android:textColor="#000"
+            android:textSize="@dimen/_13ssp" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cv_prevention"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        app:strokeWidth="1dp"
+        app:cardCornerRadius="@dimen/_7sdp"
+        app:layout_constraintStart_toStartOf="@id/cv_symptoms"
+        app:layout_constraintEnd_toEndOf="@id/cv_symptoms"
+        app:layout_constraintTop_toBottomOf="@id/cv_treatment">
+
+        <TextView
+            android:id="@+id/tv_prevention"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_10sdp"
+            android:layout_gravity="center"
+            android:text="@string/prevention"
+            android:textColor="#000"
+            android:textSize="@dimen/_13ssp" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cv_emergency_numbers"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        app:strokeWidth="1dp"
+        app:cardCornerRadius="@dimen/_7sdp"
+        app:layout_constraintStart_toStartOf="@id/cv_symptoms"
+        app:layout_constraintEnd_toEndOf="@id/cv_symptoms"
+        app:layout_constraintTop_toBottomOf="@id/cv_prevention">
+
+        <TextView
+            android:id="@+id/tv_emergency_numbers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_10sdp"
+            android:layout_gravity="center"
+            android:text="@string/emergency_numbers"
+            android:textColor="#000"
+            android:textSize="@dimen/_13ssp" />
+    </com.google.android.material.card.MaterialCardView>
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cv_statistics"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        app:strokeWidth="1dp"
+        app:cardCornerRadius="@dimen/_7sdp"
+        app:layout_constraintStart_toStartOf="@id/cv_symptoms"
+        app:layout_constraintEnd_toEndOf="@id/cv_symptoms"
+        app:layout_constraintTop_toBottomOf="@id/cv_emergency_numbers">
+
+        <TextView
+            android:id="@+id/tv_statistics"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_10sdp"
+            android:layout_gravity="center"
+            android:text="@string/statistics"
+            android:textColor="#000"
+            android:textSize="@dimen/_13ssp" />
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
