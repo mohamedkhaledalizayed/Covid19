@@ -24,6 +24,7 @@
         <activity android:name=".view.activity.MainActivity"/>
         <activity android:name=".view.activity.DashboardActivity"/>
         <activity android:name=".view.activity.InformationActivity"/>
+        <activity android:name=".view.activity.EmergencyActivity"/>
     </application>
 
 </manifest>

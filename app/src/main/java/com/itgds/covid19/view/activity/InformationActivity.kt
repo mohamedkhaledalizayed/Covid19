@@ -11,9 +11,9 @@ class InformationActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_information)
-        val data = intent.getStringExtra("data")
-
-        when (data) {
+        Log.e("test",intent.getStringExtra("data"))
+        tv_title.text = intent.getStringExtra("data")
+        when (intent.getStringExtra("data")) {
             "treatment" -> tv_info.setText(R.string.treatment_text)
             "symptoms" -> tv_info.setText(R.string.symptoms_text)
             "prevention" -> tv_info.setText(R.string.prevention_text)

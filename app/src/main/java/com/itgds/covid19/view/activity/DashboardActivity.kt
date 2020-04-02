@@ -30,5 +30,8 @@ class DashboardActivity : AppCompatActivity() {
             intent.putExtra("data", "symptoms")
             startActivity(intent)
         }
+        cv_emergency_numbers.setOnClickListener {
+            startActivity(Intent(this@DashboardActivity, EmergencyActivity::class.java))
+        }
     }
 }

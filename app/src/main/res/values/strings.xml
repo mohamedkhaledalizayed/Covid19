@@ -5,8 +5,10 @@
     <string name="today">Today</string>
     <string name="total_confirmed">Total Confirmed</string>
     <string name="total_confirmed_number">286402</string>
+    <string name="egypt_emergency_number">105</string>
     <string name="total_deceased">Total Deceased</string>
-    <string name="country_name">United Kingdom</string>
+    <string name="country_name">Egypt</string>
+    <string name="egypt">United Kingdom</string>
     <string name="total_recovered">Total Recovered</string>
     <string name="total_serious">Total Serious</string>
     <string name="new_cases">New Cases</string>
@@ -19,31 +21,34 @@
     <string name="emergency_numbers">Emergency Numbers</string>
     <string name="statistics">Statistics</string>
     <string name="symptoms_text">
-        People may be sick with the virus for 1 to 14 days before developing symptoms. The most common symptoms of coronavirus
-        disease (COVID-19) are fever, tiredness, and dry cough. Most people (about 80%) recover from the disease without needing special treatment.
-        More rarely, the disease can be serious and even fatal. Older people,
-        and people with other medical conditions (such as asthma, diabetes, or heart disease),
-        may be more vulnerable to becoming severely ill.
-        People may experience:
-        cough
-        fever
-        tiredness
-        difficulty breathing (severe cases)
+        People may be sick with the virus for 1 to 14 days before developing symptoms. \n\n
+        The most common symptoms of coronavirusdisease (COVID-19) are \n
+        fever, tiredness, and dry cough. \n\n
+        Most people (about 80%) recover from the disease without needing special treatment \n\n
+        More rarely, the disease can be serious and even fatal \n
+        Older people,and people with other medical conditions \n
+        (such as asthma, diabetes, or heart disease),
+        may be more vulnerable to becoming severely ill. \n\n
+        People may experience: \n
+        cough \n
+        fever \n
+        tiredness \n
+        difficulty breathing (severe cases) \n
     </string>
     <string name="prevention_text">
-       1. Wash Hands often
-       2.  Cough into Your ELBOW
-       3.  Dont touch Your Face
-       4.  Keep safe distance
-       5.  Stay Home if you can
+        1. Wash Hands often \n \n
+        2. Cough into Your ELBOW \n \n
+        3. Do not touch Your Face \n \n
+        4. Keep safe distance \n \n
+        5. Stay Home if you can \n \n
     </string>
     <string name="treatment_text">
-        Self care
-        If you have mild symptoms, stay at home until you’ve recovered. You can relieve your symptoms if you:
-        1. rest and sleep
-        2. drink plenty of warm liquids
-        3. take a hot shower to help ease a sore throat and cough
-        4. Self-isolate if possible
+
+        If you have mild symptoms, stay at home until you’ve recovered. You can relieve your symptoms if you:\n\n
+        1. rest and sleep \n
+        2. drink plenty of warm liquids \n
+        3. take a hot shower to help ease a sore throat and cough \n
+        4. Self-isolate if possible \n
     </string>
 
 </resources>
