@@ -16,6 +16,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:text="@string/country_name"
+        android:layout_marginTop="@dimen/_10sdp"
         android:textSize="@dimen/_20ssp"
         android:textStyle="bold"
         android:textColor="#000"

@@ -12,8 +12,9 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/_10sdp"
         android:textSize="@dimen/_20ssp"
-        android:textColor="@android:color/holo_red_dark"
+        android:textColor="#000"
         android:textStyle="bold" />
 
     <TextView
